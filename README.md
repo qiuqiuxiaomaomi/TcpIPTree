@@ -56,8 +56,6 @@ DNS域名系统
 
 ![](https://i.imgur.com/dMreEZr.jpg)
 
-传输控制协议
-
 TCP连接三次握手
 
 ![](https://i.imgur.com/mawg0wt.jpg)
