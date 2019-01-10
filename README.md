@@ -128,3 +128,13 @@ accept queue（全连接队列）
       来都比较正常，但是压力上不去，在client看来rt也比较高（rt=网络+排队+真正服务时间），
       但是从server日志记录的真正服务时间来看rt又很短。
 </pre>
+
+<pre>
+TCP中的delay ack
+
+     delay ack是指收到包后不立即ack，而是等一小会（比如40毫秒）看看，如果这40毫秒以内正
+     好有一个包（比如上面的http response）发给client，那么我这个ack包就跟着发过去（顺风
+     车，http reponse包不需要增加任何大小），这样节省了资源。 当然如果超过这个时间还没有包
+     发给client（比如nginx处理需要40毫秒以上），那么这个ack也要发给client了（即使为空，
+     要不client以为丢包了，又要重发http request，划不来）
+</pre>
