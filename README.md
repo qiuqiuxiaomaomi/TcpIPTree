@@ -138,3 +138,6 @@ TCP中的delay ack
      发给client（比如nginx处理需要40毫秒以上），那么这个ack也要发给client了（即使为空，
      要不client以为丢包了，又要重发http request，划不来）
 </pre>
+
+![](https://i.imgur.com/5UagTBe.png)
+
